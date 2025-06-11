@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Experiences - Bosscoder Academy</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Lighter background */
+            color: #1f2937;
+        }
+        .dark-glass {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .hero-banner {
+            background: linear-gradient(105deg, rgba(20,20,30,0.85), rgba(30,40,60,0.8)), url('https://placehold.co/1200x400/111827/ffffff?text=.') no-repeat center center;
+            background-size: cover;
+        }
+        .experience-card {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .experience-card:hover {
+            border-color: #3b82f6; /* blue-500 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+        /* Dropdown transition */
+        .group:hover .group-hover\:block {
+            display: block;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #e5e7eb; }
+        ::-webkit-scrollbar-thumb { background: #9ca3af; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6b7280; }
+        .star-rating .fa-star {
+            color: #d1d5db; /* gray-300 */
+        }
+        .star-rating .fa-star.text-yellow-400 {
+            color: #facc15;
+        }
+        #modalBody .prose {
+            max-width: none;
+        }
+        #modalBody h4 {
+            font-size: 1.125rem;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+         #modalBody h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #374151;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        #modalBody p, #modalBody ul {
+            font-size: 0.95rem;
+            color: #4b5563;
+        }
+        #modalBody code {
+            background-color: #e5e7eb;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.85rem;
+        }
+        #modalBody pre {
+             background-color: #1f2937;
+             color: #d1d5db;
+             padding: 1rem;
+             border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header Navigation -->
+    <header class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-3xl font-bold text-gray-800 flex-shrink-0">Bosscoder<span class="text-blue-600">.</span></a>
+            
+            <!-- Right Side: Main Nav Links & Login -->
+            <div class="hidden md:flex items-center space-x-8">
+                <!-- Program Dropdown -->
+                <div class="relative group">
+                    <button class="flex items-center text-base text-gray-600 hover:text-blue-600 transition-colors">
+                        Program <i class="fa-solid fa-chevron-down ml-2 text-xs"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white p-2 rounded-lg shadow-xl w-48 mt-2 border border-gray-100">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 rounded">Transformer</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 rounded">Evolve</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 rounded">Accelerator</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 rounded">Data Science</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 rounded">Data Analytics</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 rounded">Data Engineer</a>
+                    </div>
+                </div>
+                <!-- Resource Dropdown -->
+                <div class="relative group">
+                    <button class="flex items-center text-base text-gray-600 hover:text-blue-600 transition-colors">
+                        Resource <i class="fa-solid fa-chevron-down ml-2 text-xs"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white p-2 rounded-lg shadow-xl w-56 mt-2 border border-gray-100">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600 rounded">Test Playground</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-blue-600 font-semibold hover:bg-gray-100 rounded">Interview Experience</a>
+                    </div>
+                </div>
+                <a href="#" class="text-base text-gray-600 hover:text-blue-600 transition-colors">Masterclass</a>
+                <a href="#" class="text-base text-gray-600 hover:text-blue-600 transition-colors">Careers</a>
+                <a href="#" class="text-base text-gray-600 hover:text-blue-600 transition-colors">Blogs</a>
+                <a href="#" class="text-base text-gray-600 hover:text-blue-600 transition-colors">Login</a>
+            </div>
+             <!-- Mobile menu button -->
+             <div class="md:hidden">
+                <button class="text-gray-800">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+             </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 md:px-6 py-8">
+
+        <!-- Hero Banner Section -->
+        <section class="hero-banner mb-12 p-8 md:p-12 rounded-2xl flex flex-col items-center justify-center text-center">
+             <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight">Find Your Dream Job</h1>
+             <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-200">Explore over 3,400 anonymous and free interview experiences to prepare for your next big opportunity.</p>
+             <button id="addExperienceBtnHero" class="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 text-lg">
+                <i class="fa-solid fa-plus mr-2"></i> Share Your Experience
+             </button>
+        </section>
+
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Sidebar for Filters -->
+            <aside class="md:w-1/4 lg:w-1/5">
+                <div class="bg-white p-6 rounded-lg border border-gray-200 sticky top-24">
+                    <h3 class="text-lg font-bold mb-4">Filters</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label for="companySearch" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                            <input id="companySearch" type="search" placeholder="e.g., Google" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="roleSearch" class="block text-sm font-medium text-gray-700 mb-1">Role</label>
+                            <input id="roleSearch" type="search" placeholder="e.g., SDE-2" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                         <div>
+                            <label for="keywordSearch" class="block text-sm font-medium text-gray-700 mb-1">Keyword</label>
+                             <input id="keywordSearch" type="search" placeholder="e.g., System Design" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content Feed -->
+            <section class="md:w-3/4 lg:w-4/5">
+                 <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold">All Interview Experiences</h2>
+                    <span id="resultsCount" class="text-sm text-gray-500"></span>
+                 </div>
+                 <div id="experience-feed" class="space-y-4">
+                    <!-- Experience cards will be rendered here -->
+                 </div>
+                 <p id="no-results" class="text-center text-gray-500 mt-10 hidden">No experiences found matching your criteria.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- MODALS -->
+    <!-- Add Experience Form Modal -->
+    <div id="addExperienceModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4" onclick="closeModal('addExperienceModal')">
+        <!-- Add experience modal content remains the same -->
+    </div>
+
+    <!-- Detail View Modal -->
+    <div id="detailModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4" onclick="closeModal('detailModal')">
+         <div class="bg-white w-full max-w-4xl max-h-[90vh] rounded-xl shadow-2xl flex flex-col" onclick="event.stopPropagation()">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center flex-shrink-0">
+                 <h2 id="modalTitle" class="text-2xl font-bold text-gray-800">Experience Details</h2>
+                 <button onclick="closeModal('detailModal')" class="text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <div id="modalBody" class="p-8 overflow-y-auto prose">
+                <!-- Detailed content will be injected here -->
+            </div>
+             <div class="p-6 bg-gray-50 border-t border-gray-200 flex-shrink-0">
+                 <button onclick="closeModal('detailModal')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg">Close</button>
+             </div>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA STORE & STATE ---
+        const experienceData = [
+            { company: 'Google', role: 'SDE-2', verdict: 'Offered', difficulty: 'Hard', title: 'Google L5 System Design Deep Dive', summary: 'Challenging system design round on designing a distributed cache. Coding rounds were LC Hard/Medium.', comments: 12, upvotes: 152, rating: 4.5, rounds: [{roundTitle: 'Round 1: Technical Phone Screen', questions: ['Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.'], answer: 'I started by clarifying edge cases, like what to do if one of the nodes is not present. I explained the recursive approach. The main idea is to traverse the tree from the root. If the current node is one of the target nodes, it is the LCA. If one target is in the left subtree and the other is in the right, the current node is the LCA. Otherwise, the LCA lies in the subtree that contains both nodes. I wrote the code and walked through an example. Complexity was O(N) time and O(H) space for the recursion stack.'}, {roundTitle: 'Round 2: System Design', questions: ['Design a URL shortening service like TinyURL.'], answer: 'I discussed functional requirements (shorten URL, redirect) and non-functional ones (high availability, low latency). I designed the API endpoints (POST /shorten, GET /{shortURL}). For the data model, I chose a NoSQL database like DynamoDB for scalability. The key challenge is generating a unique short key. I proposed using a base-62 encoding of a counter from a distributed sequence generator. We also discussed caching strategies for popular URLs to reduce latency.'}] },
+            { company: 'Meta', role: 'Product Manager', verdict: 'Offered', difficulty: 'Medium', title: 'Meta PM interview - Product Sense is key', summary: '4 on-site interviews focusing on product sense, execution, and leadership.', comments: 25, upvotes: 210, rating: 4.2, rounds: [{roundTitle: 'Round 1: Product Sense', questions: ['How would you improve Facebook Groups?'], answer: 'I used the CIRCLES framework. First, I clarified the goal - is it engagement, growth, or monetization? Assuming engagement, I brainstormed user personas (community admins, new members). I identified pain points like content discovery and spam. My proposed solutions included a personalized "For You" feed within groups and better moderation tools for admins. We discussed prioritization and success metrics like daily active users in groups and time spent.'}, {roundTitle: 'Round 2: Execution', questions: ['The number of posts in Facebook Groups has dropped by 10% week-over-week. How would you investigate?'], answer: 'I started by breaking down the metric "number of posts". Is the drop global or regional? Is it affecting all group types or specific ones? I outlined potential internal causes (e.g., a recent feature launch, a bug) and external factors (e.g., holidays, competitor actions). My investigation plan involved querying internal dashboards, analyzing user segments, and potentially running user surveys to identify the root cause.'}] },
+            { company: 'Atlassian', role: 'Senior Software Engineer', verdict: 'Rejected', difficulty: 'Hard', title: 'Atlassian - Tough Values Round', summary: 'System design was to design a collaborative text editor. Failed in the final values round.', comments: 45, upvotes: 98, rating: 4.8, rounds: [] },
+            { company: 'Amazon', role: 'SDE-1', verdict: 'Offered', difficulty: 'Medium', title: 'Amazon SDE-1 New Grad Offer!', summary: 'Lots of focus on Leadership Principles. Coding questions were based on trees and graphs.', comments: 88, upvotes: 350, rating: 3.8, rounds: [] },
+            { company: 'Microsoft', role: 'Data Scientist', verdict: 'Offered', difficulty: 'Medium', title: 'Microsoft Data Scientist - SQL & A/B Testing', summary: 'Heavy focus on ML fundamentals, probability, and stats. One round was purely on SQL.', comments: 18, upvotes: 189, rating: 4.6, rounds: [] },
+            { company: 'Netflix', role: 'Senior Software Engineer', verdict: 'Offered', difficulty: 'Hard', title: 'Netflix - Culture is Everything', summary: 'Unique process with deep dives into past projects. Culture fit is huge.', comments: 33, upvotes: 256, rating: 4.4, rounds: [] },
+            { company: 'Apple', role: 'Firmware Engineer', verdict: 'Offered', difficulty: 'Hard', title: 'Apple Firmware Interview - Low Level', summary: 'Questions on C, memory management, and RTOS concepts.', comments: 19, upvotes: 120, rating: 4.7, rounds: [] },
+            { company: 'LinkedIn', role: 'Data Scientist', verdict: 'Offered', difficulty: 'Medium', title: 'LinkedIn DS - Graph Algos & Product Metrics', summary: 'Questions on graph algorithms (shortest path) and defining success metrics for the "People You May Know" feature.', comments: 22, upvotes: 180, rating: 4.3, rounds: [] },
+            { company: 'Stripe', role: 'Backend Engineer', verdict: 'Offered', difficulty: 'Hard', title: 'Stripe Backend - API Design & Concurrency', summary: 'Very high bar. Pair programming exercise to design a robust API for payments. Questions on handling race conditions.', comments: 31, upvotes: 250, rating: 4.9, rounds: [] },
+            { company: 'Twitter (X)', role: 'Software Engineer', verdict: 'Rejected', difficulty: 'Medium', title: 'Twitter - Design the Timeline', summary: 'System design question on building the user timeline. Fumbled on the fan-out on write vs read trade-offs.', comments: 40, upvotes: 110, rating: 3.5, rounds: [] },
+            { company: 'Uber', role: 'ML Engineer', verdict: 'Offered', difficulty: 'Hard', title: 'Uber - Surge Pricing Model', summary: 'Mixture of ML theory and system design. Had to design the surge pricing model and discuss how to deploy and monitor it.', comments: 28, upvotes: 205, rating: 4.1, rounds: [] },
+            { company: 'Spotify', role: 'iOS Engineer', verdict: 'Offered', difficulty: 'Medium', title: 'Spotify iOS - Swift & UI/UX', summary: 'Practical Swift coding challenge. Had to build a small feature. Discussion on architecture patterns (MVVM vs VIPER).', comments: 15, upvotes: 140, rating: 4.6, rounds: [] },
+            { company: 'Adobe', role: 'Product Designer', verdict: 'Offered', difficulty: 'Medium', title: 'Adobe - Portfolio Review and Whiteboard Challenge', summary: 'Deep dive into my portfolio projects. Whiteboard challenge was to design a mobile app for collaborative photo editing.', comments: 11, upvotes: 95, rating: 4.5, rounds: [] },
+            { company: 'Salesforce', role: 'Technical Program Manager', verdict: 'Rejected', difficulty: 'Medium', title: 'Salesforce TPM - Cross-functional skills', summary: 'Interviews focused on managing complex projects with multiple engineering teams. Stakeholder management questions were key.', comments: 18, upvotes: 80, rating: 4.0, rounds: [] },
+            { company: 'Nvidia', role: 'GPU Architect', verdict: 'Offered', difficulty: 'Hard', title: 'Nvidia - Deep Dive into GPU Architecture', summary: 'Extremely technical. Questions on CUDA, parallel computing, and computer architecture. Required deep domain knowledge.', comments: 25, upvotes: 230, rating: 4.9, rounds: [] },
+            { company: 'Shopify', role: 'Ruby on Rails Developer', verdict: 'Offered', difficulty: 'Medium', title: 'Shopify Backend - Rails & Database', summary: 'Paired programming on a Rails feature. Questions on database query optimization and scaling a Rails application.', comments: 20, upvotes: 160, rating: 4.7, rounds: [] },
+            { company: 'Figma', role: 'Frontend Engineer', verdict: 'Rejected', difficulty: 'Hard', title: 'Figma Frontend - Performance is everything', summary: 'Focus on JavaScript performance optimization and rendering. Had to debug a slow React component. Very challenging.', comments: 17, upvotes: 150, rating: 4.8, rounds: [] },
+            { company: 'Datadog', role: 'SRE', verdict: 'Offered', difficulty: 'Medium', title: 'Datadog SRE - Troubleshooting & Systems', summary: 'Live troubleshooting session on a simulated production issue. Questions on Linux internals, networking, and monitoring principles.', comments: 14, upvotes: 135, rating: 4.6, rounds: [] },
+            { company: 'Asana', role: 'Product Manager', verdict: 'Offered', difficulty: 'Medium', title: 'Asana PM - Focus on Collaboration', summary: 'Product sense questions were geared towards collaboration and productivity tools. Had to design a feature for team goal setting.', comments: 12, upvotes: 115, rating: 4.7, rounds: [] },
+            { company: 'Plaid', role: 'Security Engineer', verdict: 'Offered', difficulty: 'Hard', title: 'Plaid Security - Threat Modeling', summary: 'Threat modeling exercise on one of their APIs. Questions on common web vulnerabilities (OWASP Top 10) and cryptography.', comments: 10, upvotes: 125, rating: 4.8, rounds: [] },
+            { company: 'Roblox', role: 'Game Developer (C++)', verdict: 'Offered', difficulty: 'Medium', title: 'Roblox - C++ and 3D Math', summary: 'Coding challenges in C++. Questions on 3D transformations, vector math, and game engine architecture.', comments: 16, upvotes: 145, rating: 4.3, rounds: [] },
+            { company: 'Notion', role: 'Full Stack Engineer', verdict: 'Rejected', difficulty: 'Hard', title: 'Notion - High bar for product-minded engineers', summary: 'Full-stack exercise to build a small feature. Expected to have great product intuition in addition to strong technical skills.', comments: 21, upvotes: 190, rating: 4.9, rounds: [] },
+            { company: 'Palantir', role: 'Forward Deployed Engineer', verdict: 'Offered', difficulty: 'Hard', title: 'Palantir - Decomp and Client-Facing Skills', summary: 'Unique interview process involving a "Decomposition" round to break down a complex problem. Also tests client-facing skills.', comments: 30, upvotes: 220, rating: 4.2, rounds: [] },
+            { company: 'Canva', role: 'Frontend Engineer', verdict: 'Offered', difficulty: 'Medium', title: 'Canva Frontend - UI/UX Focus', summary: 'Had to build a UI component from scratch with great attention to detail and animations. Very product-focused.', comments: 13, upvotes: 120, rating: 4.8, rounds: [] },
+            { company: 'Slack', role: 'Desktop App Engineer', verdict: 'Offered', difficulty: 'Medium', title: 'Slack Desktop (Electron)', summary: 'Questions on the Electron framework, JavaScript, and interacting with native OS features. Debugging a memory leak was part of it.', comments: 9, upvotes: 90, rating: 4.5, rounds: [] },
+            { company: 'Brex', role: 'Fintech Backend Engineer', verdict: 'Offered', difficulty: 'Hard', title: 'Brex Backend - Financial Systems', summary: 'System design for a ledger system. Strong emphasis on correctness, consistency, and security. Knowledge of financial protocols was a plus.', comments: 11, upvotes: 165, rating: 4.7, rounds: [] },
+        ];
+        
+        // --- DOM ELEMENTS ---
+        const feedContainer = document.getElementById('experience-feed');
+        const companySearch = document.getElementById('companySearch');
+        const roleSearch = document.getElementById('roleSearch');
+        const keywordSearch = document.getElementById('keywordSearch');
+        const noResultsMessage = document.getElementById('no-results');
+        const resultsCount = document.getElementById('resultsCount');
+        const addExperienceBtnHero = document.getElementById('addExperienceBtnHero');
+        const experienceForm = document.getElementById('experienceForm');
+
+        // --- DYNAMIC RENDERING LOGIC ---
+        function createStarRating(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                stars += `<i class="fa-solid fa-star ${i <= Math.round(rating) ? 'text-yellow-400' : ''}"></i>`;
+            }
+            return `<div class="star-rating flex items-center gap-1">${stars} <span class="text-xs font-bold ml-1">${rating.toFixed(1)}</span></div>`;
+        }
+        
+        function renderExperiences(data) {
+            resultsCount.textContent = `${data.length} experiences found`;
+            if (data.length === 0) {
+                feedContainer.innerHTML = '';
+                noResultsMessage.classList.remove('hidden');
+                return;
+            }
+            noResultsMessage.classList.add('hidden');
+            
+            let content = '';
+            data.forEach((item, index) => {
+                const difficultyColor = { 'Easy': 'bg-green-100 text-green-800', 'Medium': 'bg-yellow-100 text-yellow-800', 'Hard': 'bg-red-100 text-red-800'}[item.difficulty];
+                const verdictColor = item.verdict === 'Offered' ? 'text-green-600' : 'text-red-600';
+
+                content += `
+                <div class="experience-card p-6 rounded-lg cursor-pointer" 
+                    data-index="${index}"
+                    onclick="handleExperienceClick(this)">
+                    <div class="flex flex-col sm:flex-row justify-between items-start">
+                        <div class="flex items-center gap-4">
+                            <img src="https://logo.clearbit.com/${item.company.toLowerCase().replace(/\s*\(.*\)\s*/g, '').trim()}.com?size=48" alt="${item.company} logo" class="w-12 h-12 rounded-lg bg-gray-100 object-contain p-1" onerror="this.src='https://placehold.co/48x48/e5e7eb/4b5563?text=${item.company.charAt(0)}'">
+                            <div>
+                                <h3 class="font-bold text-lg">${item.title}</h3>
+                                <p class="text-sm text-gray-600">${item.company} • ${item.role}</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 sm:mt-0 flex-shrink-0">
+                             ${createStarRating(item.rating)}
+                        </div>
+                    </div>
+                    <p class="mt-4 text-gray-700 text-sm">${item.summary}</p>
+                    <hr class="my-4 border-gray-100">
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <div class="flex items-center gap-4">
+                            <span class="font-bold ${verdictColor}">${item.verdict}</span>
+                            <span class="px-2 py-1 rounded-full font-semibold ${difficultyColor}">${item.difficulty} Interview</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span><i class="fa-solid fa-thumbs-up mr-1"></i> ${item.upvotes} Helpful</span>
+                            <span><i class="fa-solid fa-comments mr-1"></i> ${item.comments} Comments</span>
+                        </div>
+                    </div>
+                </div>`;
+            });
+            feedContainer.innerHTML = content;
+        }
+
+        // --- MODAL & GATING LOGIC ---
+        function openModal(modalId) { document.getElementById(modalId)?.classList.remove('hidden'); }
+        function closeModal(modalId) { document.getElementById(modalId)?.classList.add('hidden'); }
+        
+        function handleExperienceClick(element) {
+            const index = element.dataset.index;
+            const item = experienceData[index];
+            if (!item) return;
+
+            // Build Modal Header
+            const difficultyColor = { 'Easy': 'bg-green-100 text-green-800', 'Medium': 'bg-yellow-100 text-yellow-800', 'Hard': 'bg-red-100 text-red-800'}[item.difficulty];
+            const verdictColor = item.verdict === 'Offered' ? 'text-green-600' : 'text-red-600';
+            
+            let modalBodyContent = `
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-6 pb-6 border-b border-gray-200">
+                    <div><strong>Company Rating:</strong> ${createStarRating(item.rating)}</div>
+                    <div><strong>Verdict:</strong> <span class="font-bold ${verdictColor}">${item.verdict}</span></div>
+                    <div><strong>Difficulty:</strong> <span class="px-2 py-1 text-xs rounded-full font-semibold ${difficultyColor}">${item.difficulty}</span></div>
+                </div>
+            `;
+
+            // Build Modal Rounds
+            if(item.rounds && item.rounds.length > 0) {
+                 item.rounds.forEach(round => {
+                    modalBodyContent += `
+                        <div class="mb-6">
+                            <h4>${round.roundTitle}</h4>
+                            <h5>Question(s):</h5>
+                            <ul>
+                                ${round.questions.map(q => `<li class="ml-5 list-disc">${q}</li>`).join('')}
+                            </ul>
+                            <h5>Thought Process & Answer:</h5>
+                            <p>${round.answer.replace(/\n/g, '<br>')}</p>
+                        </div>
+                    `;
+                 });
+            } else {
+                 modalBodyContent += `<p><em>No detailed round information was provided for this experience. The summary is:</em></p><p>${item.summary}</p>`;
+            }
+
+
+            document.getElementById('modalTitle').innerText = item.title;
+            document.getElementById('modalBody').innerHTML = modalBodyContent;
+            openModal('detailModal');
+        }
+
+        addExperienceBtnHero.addEventListener('click', () => openModal('addExperienceModal'));
+
+        // --- FILTERING LOGIC ---
+        function filterExperiences() {
+            const companyTerm = companySearch.value.toLowerCase();
+            const roleTerm = roleSearch.value.toLowerCase();
+            const keywordTerm = keywordSearch.value.toLowerCase();
+
+            const filteredData = experienceData.filter(item => 
+                item.company.toLowerCase().includes(companyTerm) && 
+                item.role.toLowerCase().includes(roleTerm) && 
+                (item.title.toLowerCase().includes(keywordTerm) || item.summary.toLowerCase().includes(keywordTerm))
+            );
+            renderExperiences(filteredData);
+        }
+
+        [companySearch, roleSearch, keywordSearch].forEach(input => input.addEventListener('input', filterExperiences));
+        
+        // --- FORM SUBMISSION (Simplified) ---
+        document.getElementById('experienceForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real app, this would send data to a server.
+            alert('Thank you for your contribution!');
+            closeModal('addExperienceModal');
+        });
+
+        // --- INITIAL RENDER ---
+        renderExperiences(experienceData);
+    </script>
+</body>
+</html>
